@@ -9,7 +9,7 @@ mkdir -p ${MODULE_DIR_PATH}
 mkdir -p ${LOG_DIR_PATH}
 mkdir -p ${WEB_DIR_PATH}
 mkdir -p ${CONSOLE_DIR_PATH}
-cp -r actions apis commands services components config constants models scripts Module.php ${MODULE_DIR_PATH}
+cp -r actions apis commands controllers services components config constants models scripts Module.php ${MODULE_DIR_PATH}
 cp -r console/* ${CONSOLE_DIR_PATH}
 cp -r web/* ${WEB_DIR_PATH}
 cd output
