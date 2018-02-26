@@ -1,14 +1,15 @@
 <?php
 $config = [
-    'id' => 'study_palace',
+    'id' => 'question_spider',
     'timeZone'=>'Asia/Shanghai',
     'basePath' => dirname(dirname(__DIR__)),
     'bootstrap' => ['log'],
     'aliases' => [
-//        '@rrxframework' => '@app/../rrxframework',
+//        '@xxx' => '@app/../xxx',
     ],
+    'controllerNamespace' => 'app\modules\controllers',
     'modules' => [
-        'study_palace' => ['class' => 'app\modules\Module'],
+        'question_spider' => ['class' => 'app\modules\Module'],
     ],
     'components' => include(__DIR__ . '/components.php'),
     'params' => include (__DIR__ . '/params.php'),
