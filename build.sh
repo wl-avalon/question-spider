@@ -10,5 +10,5 @@ cp -r apis commands services components config constants models scripts Module.p
 cp -r console/* ${CONSOLE_DIR_PATH}
 cd output
 find ./ -name .git -exec rm -rf {} \;
-tar cvzf ${MODULE_DIR_PATH}.tar.gz application
+tar cvzf ${MODULE_NAME}.tar.gz application
 rm -rf application
