@@ -11,7 +11,7 @@ defined('YII_ENV') or define('YII_ENV', 'dev');
 require __DIR__ . '/../../vendor/autoload.php';
 require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';
 
-$config = require __DIR__ . '/../modules/config/console.php';
+$config = require __DIR__ . '/../modules/config/web.php';
 
 //defined('SP_CONF_FILE') or define('SP_CONF_FILE', '/home/saber/study-palace/server.ini');
 //$server_ini = parse_ini_file(SP_CONF_FILE, true);
