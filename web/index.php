@@ -27,7 +27,7 @@ $config = require __DIR__ . '/../modules/config/console.php';
 //}
 
 try {
-    (new yii\console\Application($config))->run();
+    (new yii\web\Application($config))->run();
 } catch (Exception $e) {
     header("http/1.1 404 Not Found");
     header("status: 404 Not Found");
