@@ -6,7 +6,7 @@
  * Time: 下午9:17
  */
 
-namespace app\moduels\components;
+namespace app\modules\components;
 
 
 class MockData

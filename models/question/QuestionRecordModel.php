@@ -7,8 +7,8 @@
  */
 
 namespace app\modules\models\question;
-use app\constants\QuestionRecordBeanConst;
-use app\models\beans\QuestionRecordBean;
+use app\modules\constants\QuestionRecordBeanConst;
+use app\modules\models\beans\QuestionRecordBean;
 
 class QuestionRecordModel
 {

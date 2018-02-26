@@ -6,15 +6,13 @@
  * Time: 下午4:52
  */
 
-namespace app\services\daemon\process;
-
-
-use app\apis\IDAllocApi;
-use app\components\SPLog;
-use app\models\beans\QuestionDetailBean;
-use app\models\beans\QuestionRecordBean;
-use app\models\question\QuestionDetailModel;
-use app\models\question\QuestionRecordModel;
+namespace app\modules\services\daemon\process;
+use app\modules\apis\IDAllocApi;
+use app\modules\components\SPLog;
+use app\modules\models\beans\QuestionDetailBean;
+use app\modules\models\beans\QuestionRecordBean;
+use app\modules\models\question\QuestionDetailModel;
+use app\modules\models\question\QuestionRecordModel;
 
 class CreateQuestionDetailService
 {

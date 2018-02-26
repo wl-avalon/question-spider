@@ -6,7 +6,7 @@
  * Time: 下午6:44
  */
 
-namespace app\modules\modules\library;
+namespace app\modules\library;
 use app\modules\constants\RedisKey;
 use rrxframework\util\RedisUtil;
 

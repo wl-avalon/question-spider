@@ -8,12 +8,12 @@
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';
 
-$config = require __DIR__ . '/../config/console.php';
+$config = require __DIR__ . '/../modules/config/console.php';
 
-defined('SP_CONF_FILE') or define('SP_CONF_FILE', '/home/saber/study-palace/server.ini');
+//defined('SP_CONF_FILE') or define('SP_CONF_FILE', '/home/saber/study-palace/server.ini');
 //$server_ini = parse_ini_file(SP_CONF_FILE, true);
 //
 //foreach ($server_ini as $key => $userConfig) {
