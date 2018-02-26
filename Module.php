@@ -11,8 +11,7 @@ namespace app\modules;
 class Module extends \yii\base\Module {
     public function init() {
         $class = get_class($this);
-        if (($pos = strrpos($class, '\\')) !== false) {
-            $this->controllerNamespace = substr($class, 0, $pos) . '\\controllers';
-        }
+        $pos = strrpos($class, '\\');
+        $this->controllerNamespace = substr($class, 0, $pos) . '\\commands';
     }
 }

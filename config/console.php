@@ -4,7 +4,6 @@ $config = [
     'timeZone'=>'Asia/Shanghai',
     'basePath' => dirname(dirname(__DIR__)),
     'bootstrap' => ['log'],
-//    'controllerNamespace' => 'app\modules\commands',
     'components' => include(__DIR__ . '/console_components.php'),
     'params' => include (__DIR__ . '/params.php'),
     'modules' => [

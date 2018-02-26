@@ -6,7 +6,7 @@
  * Time: 下午7:29
  */
 
-namespace app\moduels\commands;
+namespace app\modules\commands;
 use app\modules\components\MockData;
 use app\modules\components\SPLog;
 use app\modules\constants\RedisKey;
