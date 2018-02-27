@@ -1,11 +1,14 @@
 <?php
 return [
     'log' => [
+        'class' => 'sp_framework\ext\log\SpYiiLogDispatcher',
+        'traceLevel' => YII_DEBUG ? 3 : 0,
+        'logger' => 'sp_framework\ext\log\SpYiiLogger',
         'targets' => [
             [
-                'class' => 'yii\log\FileTarget',
-                'levels' => ['error', 'warning'],
-//                'levels' => ['trace','info','profile','warning','error'],
+                'class' => 'sp_framework\ext\log\SpYiiLogFileTarget',
+                'log_level' => 16,
+                'log_path' => '/home/saber/logs/console',
             ],
         ],
     ],
