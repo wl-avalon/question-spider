@@ -8,7 +8,6 @@
 
 namespace app\modules\commands;
 use app\modules\components\MockData;
-use app\modules\components\SPLog;
 use app\modules\constants\RedisKey;
 use app\modules\library\Proxy;
 use app\modules\services\daemon\process\CreateQuestionDetailService;
@@ -16,6 +15,7 @@ use app\modules\services\daemon\process\TurnMathmlToPngService;
 use app\modules\services\daemon\spider\CreateQuestionService;
 use app\modules\services\daemon\spider\GetProxyIPListService;
 use rrxframework\util\RedisUtil;
+use sp_framework\components\SpLog;
 use yii\console\Controller;
 
 class MainController extends Controller
@@ -33,7 +33,7 @@ class MainController extends Controller
             $miPuIPList = GetProxyIPListService::getMiPuIpList();
             $miPuIPList = array_unique($miPuIPList);
             $selfIPList = Proxy::getSelfProxyIPList($miPuIPList);
-            SPLog::log('self ip list is:' . implode(',', $selfIPList));
+            SpLog::notice('self ip list is:' . implode(',', $selfIPList));
             foreach($selfIPList as $selfIP){
                 $redis->sadd(RedisKey::SELF_PROXY_IP_LIST, $selfIP);
             }

@@ -8,11 +8,11 @@
 
 namespace app\modules\services\daemon\process;
 use app\modules\apis\IDAllocApi;
-use app\modules\components\SPLog;
 use app\modules\models\beans\QuestionDetailBean;
 use app\modules\models\beans\QuestionRecordBean;
 use app\modules\models\question\QuestionDetailModel;
 use app\modules\models\question\QuestionRecordModel;
+use sp_framework\components\SpLog;
 
 class CreateQuestionDetailService
 {
@@ -29,7 +29,7 @@ class CreateQuestionDetailService
                 do{
                     $explodeResult = self::explodeQuestionRecord($questionRecordBean, $processName);
                     if(!$explodeResult){
-                        SPLog::warning("解析失败,数据为:" . json_encode($questionRecordBean->toArray()));
+                        SpLog::warning("解析失败,数据为:" . json_encode($questionRecordBean->toArray()));
                         sleep(1);
                     }
                 }while(!$explodeResult);
