@@ -5,7 +5,7 @@ $config = [
     'basePath' => dirname(dirname(__DIR__)),
     'bootstrap' => ['log'],
     'aliases' => [
-//        '@xxx' => '@app/../xxx',
+        '@sp_framework' => '@app/../sp_framework',
     ],
     'controllerNamespace' => 'app\modules\controllers',
     'modules' => [

@@ -59,7 +59,6 @@ class MainController extends Controller
     }
 
     public function actionCreateQuestionDetail($processName = "", $minID = 0){
-        echo 'asd';exit;
         set_time_limit(0);
         CreateQuestionDetailService::execute($processName, $minID);
     }
