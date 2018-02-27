@@ -6,9 +6,9 @@
  * Time: 下午6:02
  */
 namespace app\modules\apis;
-use rrxframework\base\JdbLog;
-use rrxframework\util\DictUtil;
-use rrxframework\util\HttpUtil;
+use sp_framework\components\SpLog;
+use sp_framework\util\DictUtil;
+use sp_framework\util\HttpUtil;
 use Yii;
 
 class IDAllocApi
@@ -78,7 +78,7 @@ class IDAllocApi
 
         if ($data['errno'] == self::INFO_OK) {
             if (empty($data['content'])) {
-                JdbLog::warning("msg[$strInterface], file[" . __CLASS__ . ':' . __LINE__ . ']['.$data['msg'].']');
+                SpLog::warning("msg[$strInterface], file[" . __CLASS__ . ':' . __LINE__ . ']['.$data['msg'].']');
                 return ['errno' => self::INFO_ERROR, 'msg' => '调用模块网络异常'];
             }
             $ret = json_decode($data['content'], true);
@@ -106,7 +106,7 @@ class IDAllocApi
 
         if ($data['errno'] == self::INFO_OK) {
             if (empty($data['content'])) {
-                JdbLog::warning("msg[$strInterface], file[" . __CLASS__ . ':' . __LINE__ . ']['.$data['msg'].']');
+                SpLog::warning("msg[$strInterface], file[" . __CLASS__ . ':' . __LINE__ . ']['.$data['msg'].']');
                 return ['errno' => self::INFO_ERROR, 'msg' => '调用模块网络异常'];
             }
             $ret = $data['content'];
