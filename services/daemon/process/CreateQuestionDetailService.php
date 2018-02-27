@@ -66,6 +66,7 @@ class CreateQuestionDetailService
                 'subject'                   => $condition['subject'],
                 'version'                   => $condition['version'],
                 'module'                    => $condition['module'],
+                'node_id'                   => $condition['node'],
                 'question_type'             => $condition['questionType'],
                 'create_time'               => date('Y-m-d H:i:s'),
             ];

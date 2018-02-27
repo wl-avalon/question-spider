@@ -24,6 +24,7 @@ class QuestionDetailBean
     private $subject                    = null; // INT(11) NOT NULL DEFAULT 0 COMMENT '科目',
     private $version                    = null; // INT(11) NOT NULL DEFAULT 0 COMMENT '教材版本',
     private $module                     = null; // INT(11) NOT NULL DEFAULT 0 COMMENT '模块级别',
+    private $node_id                    = null; // INT(11) NOT NULL DEFAULT 0 COMMENT '课程节点',
     private $question_type              = null; // INT(11) NOT NULL DEFAULT 0 COMMENT '题型',
     private $del_status                 = null; // BOOLEAN DEFAULT FALSE COMMENT '逻辑删除状态,false:未删除, true:已删除',
     private $create_time                = null; // TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
@@ -44,6 +45,7 @@ class QuestionDetailBean
         $this->subject                      = $input['subject']                     ?? null;
         $this->version                      = $input['version']                     ?? null;
         $this->module                       = $input['module']                      ?? null;
+        $this->node_id                      = $input['node_id']                     ?? null;
         $this->question_type                = $input['question_type']               ?? null;
         $this->del_status                   = $input['del_status']                  ?? null;
         $this->create_time                  = $input['create_time']                 ?? null;
@@ -65,6 +67,7 @@ class QuestionDetailBean
             'subject'                   => $this->subject,
             'version'                   => $this->version,
             'module'                    => $this->module,
+            'node_id'                   => $this->node_id,
             'question_type'             => $this->question_type,
             'del_status'                => $this->del_status,
             'create_time'               => $this->create_time,
@@ -74,7 +77,7 @@ class QuestionDetailBean
 
     public function getID()                         {return $this->id;}
     public function getUuid()                       {return $this->uuid;}
-    public function getQuestionCreatorID()          {return $this->question_record_id; }
+    public function getQuestionRecordUuid()         {return $this->question_record_id;}
     public function getQuestionContent()            {return $this->question_content;}
     public function getQuestionAnswer()             {return $this->question_answer;}
     public function getQuestionAnalysis()           {return $this->question_analysis;}
@@ -85,6 +88,7 @@ class QuestionDetailBean
     public function getSubject()                    {return $this->subject;}
     public function getVersion()                    {return $this->version;}
     public function getModule()                     {return $this->module;}
+    public function getNodeID()                     {return $this->node_id;}
     public function getQuestionType()               {return $this->question_type;}
     public function getDelStatus()                  {return $this->del_status;}
     public function getCreateTime()                 {return $this->create_time;}
@@ -103,6 +107,7 @@ class QuestionDetailBean
     public function setSubject($subject)                                    {$this->subject = $subject;}
     public function setVersion($version)                                    {$this->version = $version;}
     public function setModule($module)                                      {$this->module = $module;}
+    public function setNodeID($nodeID)                                      {$this->node_id = $nodeID;}
     public function setQuestionType($question_type)                         {$this->question_type = $question_type;}
     public function setDelStatus($del_status)                               {$this->del_status = $del_status;}
     public function setCreateTime($create_time)                             {$this->create_time = $create_time;}

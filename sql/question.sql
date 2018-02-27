@@ -55,6 +55,7 @@ CREATE TABLE `question_detail` (
   `subject` INT(11) NOT NULL DEFAULT 0 COMMENT '科目',
   `version` INT(11) NOT NULL DEFAULT 0 COMMENT '教材版本',
   `module` INT(11) NOT NULL DEFAULT 0 COMMENT '教材模块',
+  `node_id` INT(11) NOT NULL DEFAULT 0 COMMENT '课程节点',
   `question_type` INT(11) NOT NULL DEFAULT 0 COMMENT '题型',
   `difficulty` TINYINT(4) NOT NULL DEFAULT 0 COMMENT '难度',
   `del_status` BOOLEAN DEFAULT FALSE COMMENT '逻辑删除状态,false:未删除, true:已删除',
@@ -67,6 +68,7 @@ CREATE TABLE `question_detail` (
   KEY `idx_subject` (`subject`),
   KEY `idx_version` (`version`),
   KEY `idx_module` (`module`),
+  KEY `idx_node_id` (`node_id`),
   KEY `idx_question_type` (`question_type`),
   KEY `idx_difficulty` (`difficulty`),
   KEY `idx_del_status` (`del_status`)
