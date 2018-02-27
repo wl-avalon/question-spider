@@ -1,6 +1,6 @@
 #!/bash/bin
 phpCommand=/usr/bin/php
-spIndexPath=/home/saber/webroot/study-palace/console/index.php
+spIndexPath=/home/saber/webroot/study-palace/question-spider/console/index.php
 spPath=/home/saber/webroot/study-palace
 spCommand=main/create-question-detail
 
