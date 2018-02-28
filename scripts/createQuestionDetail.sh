@@ -4,7 +4,7 @@ spIndexPath=/home/saber/webroot/study-palace/question-spider/console/index.php
 spPath=/home/saber/webroot/study-palace
 spCommand=main/create-question-detail
 
-#/usr/bin/php /home/saber/webroot/study-palace/console/index.php main/create-question-detail
+#/usr/bin/php /home/saber/webroot/study-palace/question-spider/console/index.php main/create-question-detail
 ${phpCommand} ${spIndexPath} ${spCommand} 语文 >/dev/null 2>&1 &
 ${phpCommand} ${spIndexPath} ${spCommand} 数学 >/dev/null 2>&1 &
 ${phpCommand} ${spIndexPath} ${spCommand} 英语 >/dev/null 2>&1 &
