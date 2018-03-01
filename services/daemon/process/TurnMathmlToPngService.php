@@ -11,6 +11,7 @@ use app\modules\components\Format;
 use app\modules\components\PackageParams;
 use app\modules\models\beans\QuestionDetailBean;
 use app\modules\models\question\QuestionDetailModel;
+use sp_framework\components\SpLog;
 
 class TurnMathmlToPngService
 {
@@ -103,6 +104,10 @@ class TurnMathmlToPngService
     }
 
     private static function createPngFile($mathMlFileName, $pngFileName){
-        exec(self::JEUCLID_BIN . " {$mathMlFileName} {$pngFileName} -fontSize 42");
+        $output = [];
+        exec(self::JEUCLID_BIN . " {$mathMlFileName} {$pngFileName} -fontSize 42", $output);
+        if(!empty($output)){
+            SpLog::warning("{$pngFileName} create result is:" . json_encode($output));
+        }
     }
 }
