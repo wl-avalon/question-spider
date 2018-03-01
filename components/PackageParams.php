@@ -9,6 +9,8 @@
 namespace app\modules\components;
 
 
+use app\modules\models\beans\QuestionDetailBean;
+
 class PackageParams
 {
     const IMAGE_DIR_PATH = '/home/saber/webroot/image';
@@ -35,5 +37,21 @@ class PackageParams
 
     public static function getAnalysisPNGFileName($dirPath, $index){
         return "{$dirPath}/analysis_{$index}.png";
+    }
+
+    public static function getImageDirPath(QuestionDetailBean $questionDetailBean){
+        return self::IMAGE_DIR_PATH . "/math-ml/{$questionDetailBean->getSubject()}/{$questionDetailBean->getVersion()}/{$questionDetailBean->getModule()}/{$questionDetailBean->getNodeID()}";
+    }
+
+    public static function getContentWebPNGFileName($uuid, $index){
+        return "/mathml/{$uuid}/content_{$index}.png";
+    }
+
+    public static function getAnswerWebPNGFileName($uuid, $index){
+        return "/mathml/{$uuid}/answer_{$index}.png";
+    }
+
+    public static function getAnalysisWebPNGFileName($uuid, $index){
+        return "/mathml/{$uuid}/analysis_{$index}.png";
     }
 }

@@ -39,9 +39,9 @@ class TurnMathmlToPngService
         $questionAnswer     = Format::formatText($questionDetailBean->getQuestionAnswer());
         $questionAnalysis   = Format::formatText($questionDetailBean->getQuestionAnalysis());
 
-//        $contentMathMlList  = self::getMathMlTagList($questionContent);
-//        $answerMathMlList   = self::getMathMlTagList($questionAnswer);
-//        $analysisMathMlList = self::getMathMlTagList($questionAnalysis);
+        $contentMathMlList  = self::getMathMlTagList($questionContent);
+        $answerMathMlList   = self::getMathMlTagList($questionAnswer);
+        $analysisMathMlList = self::getMathMlTagList($questionAnalysis);
 
         $questionContent    = self::delMathMlTag($questionContent);
         $questionAnswer     = self::delMathMlTag($questionAnswer);
@@ -49,35 +49,35 @@ class TurnMathmlToPngService
         if(empty($questionContent) && empty($questionAnswer) && empty($questionAnalysis)){
             return $questionDetailBean;
         }else{
-            $dirPath = PackageParams::IMAGE_DIR_PATH . "/" . $questionDetailBean->getUuid();
+            $dirPath = PackageParams::getImageDirPath($questionDetailBean);
             if(!is_dir($dirPath)){
-                mkdir($dirPath);
+                mkdir($dirPath, 0777, true);
             }
         }
 
-//        foreach($contentMathMlList as $index => $contentMathMl){
-//            $mathMlFileName = PackageParams::getContentMathMlFileName($dirPath, $index);
-//            $pngFileName    = PackageParams::getContentPNGFileName($dirPath, $index);
-//            self::createMathMlFile($mathMlFileName, $contentMathMl);
-//            self::createPngFile($mathMlFileName, $pngFileName);
-//            unlink($mathMlFileName);
-//        }
-//
-//        foreach($answerMathMlList as $index => $contentMathMl){
-//            $mathMlFileName = PackageParams::getAnswerMathMlFileName($dirPath, $index);
-//            $pngFileName    = PackageParams::getAnswerPNGFileName($dirPath, $index);
-//            self::createMathMlFile($mathMlFileName, $contentMathMl);
-//            self::createPngFile($mathMlFileName, $pngFileName);
-//            unlink($mathMlFileName);
-//        }
-//
-//        foreach($analysisMathMlList as $index => $contentMathMl){
-//            $mathMlFileName = PackageParams::getAnalysisMathMlFileName($dirPath, $index);
-//            $pngFileName    = PackageParams::getAnalysisPNGFileName($dirPath, $index);
-//            //self::createMathMlFile($mathMlFileName, $contentMathMl);
-//            //self::createPngFile($mathMlFileName, $pngFileName);
-//            //unlink($mathMlFileName);
-//        }
+        foreach($contentMathMlList as $index => $contentMathMl){
+            $mathMlFileName = PackageParams::getContentMathMlFileName($dirPath, $index);
+            $pngFileName    = PackageParams::getContentPNGFileName($dirPath, $index);
+            self::createMathMlFile($mathMlFileName, $contentMathMl);
+            self::createPngFile($mathMlFileName, $pngFileName);
+            unlink($mathMlFileName);
+        }
+
+        foreach($answerMathMlList as $index => $contentMathMl){
+            $mathMlFileName = PackageParams::getAnswerMathMlFileName($dirPath, $index);
+            $pngFileName    = PackageParams::getAnswerPNGFileName($dirPath, $index);
+            self::createMathMlFile($mathMlFileName, $contentMathMl);
+            self::createPngFile($mathMlFileName, $pngFileName);
+            unlink($mathMlFileName);
+        }
+
+        foreach($analysisMathMlList as $index => $contentMathMl){
+            $mathMlFileName = PackageParams::getAnalysisMathMlFileName($dirPath, $index);
+            $pngFileName    = PackageParams::getAnalysisPNGFileName($dirPath, $index);
+            self::createMathMlFile($mathMlFileName, $contentMathMl);
+            self::createPngFile($mathMlFileName, $pngFileName);
+            unlink($mathMlFileName);
+        }
         $questionDetailBean->setQuestionContent($questionContent);
         $questionDetailBean->setQuestionAnswer($questionAnswer);
         $questionDetailBean->setQuestionAnalysis($questionAnalysis);

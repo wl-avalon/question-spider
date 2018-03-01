@@ -107,3 +107,28 @@ grant select,insert,update on question_history.* to 'question_rd'@'%';
 grant select,insert,update on question_geography.* to 'question_rd'@'%';
 grant select,insert,update on question_common_technology.* to 'question_rd'@'%';
 grant select,insert,update on question_internet_technology.* to 'question_rd'@'%';
+
+DELETE FROM `question_math`.`question_detail`;
+DELETE FROM `question_english`.`question_detail`;
+DELETE FROM `question_physical`.`question_detail`;
+DELETE FROM `question_chemistry`.`question_detail`;
+DELETE FROM `question_biological`.`question_detail`;
+DELETE FROM `question_political`.`question_detail`;
+DELETE FROM `question_history`.`question_detail`;
+DELETE FROM `question_geography`.`question_detail`;
+DELETE FROM `question_common_technology`.`question_detail`;
+DELETE FROM `question_internet_technology`.`question_detail`;
+DELETE FROM `question_chinese`.`question_detail`;
+
+
+UPDATE `question_math`.`question_record` SET `work_status` = 0;
+UPDATE `question_english`.`question_record` SET `work_status` = 0;
+UPDATE `question_physical`.`question_record` SET `work_status` = 0;
+UPDATE `question_chemistry`.`question_record` SET `work_status` = 0;
+UPDATE `question_biological`.`question_record` SET `work_status` = 0;
+UPDATE `question_political`.`question_record` SET `work_status` = 0;
+UPDATE `question_history`.`question_record` SET `work_status` = 0;
+UPDATE `question_geography`.`question_record` SET `work_status` = 0;
+UPDATE `question_common_technology`.`question_record` SET `work_status` = 0;
+UPDATE `question_internet_technology`.`question_record` SET `work_status` = 0;
+UPDATE `question_chinese`.`question_record` SET `work_status` = 0;
