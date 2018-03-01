@@ -40,7 +40,7 @@ class PackageParams
     }
 
     public static function getImageDirPath(QuestionDetailBean $questionDetailBean){
-        return self::IMAGE_DIR_PATH . "/math-ml/{$questionDetailBean->getSubject()}/{$questionDetailBean->getVersion()}/{$questionDetailBean->getModule()}/{$questionDetailBean->getNodeID()}";
+        return self::IMAGE_DIR_PATH . "/math-ml/{$questionDetailBean->getSubject()}/{$questionDetailBean->getVersion()}/{$questionDetailBean->getModule()}/{$questionDetailBean->getNodeID()}/{$questionDetailBean->getUuid()}";
     }
 
     public static function getContentWebPNGFileName($uuid, $index){
