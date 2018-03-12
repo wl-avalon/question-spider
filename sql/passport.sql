@@ -14,7 +14,7 @@ CREATE TABLE `passport_user` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '主键,自增ID',
   `uuid` VARCHAR(100) DEFAULT '' COMMENT '用户唯一ID',
   `user_type` TINYINT(4) DEFAULT 0 COMMENT '用户类型 0:超级管理员',
-  `user_status` TINYINT(4) DEFAULT 0 COMMENT '用户状态 0:预注册 1:正常，2:挂失(临时不用) 3:注销(永久不用)',
+  `user_status` TINYINT(4) DEFAULT 0 COMMENT '用户状态,0:预注册,1:正常,2:挂失(临时不用),3:注销(永久不用)',
   `phone` VARCHAR(30) DEFAULT '' COMMENT '手机号',
   `nick_name` VARCHAR(30) DEFAULT '' COMMENT '昵称',
   `avatar_url` VARCHAR(300) DEFAULT '' COMMENT '头像地址',

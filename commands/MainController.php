@@ -67,9 +67,9 @@ class MainController extends Controller
         set_time_limit(0);
         TurnMathmlToPngService::execute($processName, $minID);
     }
-}
 
-//        $startUrl   = "http://www.91taoke.com/Juanzi/index/d/1/id";
-//        $record    = SpiderService::getAllEnum($startUrl);
-//        echo json_encode($record);
-//        exit;
+    public function actionCreateNodeList(){
+        set_time_limit(0);
+        $record = MockData::getTestRecord();
+    }
+}
