@@ -13,18 +13,18 @@ require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../modules/config/web.php';
 
-//defined('SP_CONF_FILE') or define('SP_CONF_FILE', '/home/saber/study-palace/server.ini');
-//$server_ini = parse_ini_file(SP_CONF_FILE, true);
-//
-//foreach ($server_ini as $key => $userConfig) {
-//    if (strlen($key) > 3 && 'db_' === substr($key, 0, 3) && isset($config['components'][$key])) {
-//        $config['components'][$key] = array_merge($config['components'][$key], $userConfig);
-//    } elseif (isset($config['params'][$key])) {
-//        $config['params'][$key] = array_merge($config['params'][$key], $userConfig);
-//    } else {
-//        $config['params'][$key] = $userConfig;
-//    }
-//}
+defined('SP_CONF_FILE') or define('SP_CONF_FILE', '/home/saber/study-palace/server.ini');
+$server_ini = parse_ini_file(SP_CONF_FILE, true);
+
+foreach ($server_ini as $key => $userConfig) {
+    if (strlen($key) > 3 && 'db_' === substr($key, 0, 3) && isset($config['components'][$key])) {
+        $config['components'][$key] = array_merge($config['components'][$key], $userConfig);
+    } elseif (isset($config['params'][$key])) {
+        $config['params'][$key] = array_merge($config['params'][$key], $userConfig);
+    } else {
+        $config['params'][$key] = $userConfig;
+    }
+}
 
 try {
     (new yii\web\Application($config))->run();
